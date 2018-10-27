@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Cpdevent</th>
       <th>Name</th>
       <th>Date</th>
       <th>Description</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @cpd_events.each do |cpd_event| %>
       <tr>
-        <td><%= cpd_event.cpdevent_id %></td>
         <td><%= cpd_event.name %></td>
         <td><%= cpd_event.date %></td>
         <td><%= cpd_event.description %></td>

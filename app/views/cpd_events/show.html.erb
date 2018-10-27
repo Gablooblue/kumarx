@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Cpdevent:</strong>
-  <%= @cpd_event.cpdevent_id %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @cpd_event.name %>
 </p>
@@ -20,5 +15,6 @@
   <%= @cpd_event.description %>
 </p>
 
+<%= link_to "Make announcement", new_cpd_event_announcement_path(@cpd_event) %>
 <%= link_to 'Edit', edit_cpd_event_path(@cpd_event) %> |
 <%= link_to 'Back', cpd_events_path %>

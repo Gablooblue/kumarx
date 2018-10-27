@@ -13,8 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_10_27_161156) do
 
   create_table "announcements", force: :cascade do |t|
-    t.integer "cpdevent_id"
-    t.integer "announcement_id"
+    t.integer "cpd_event_id"
     t.integer "user_id"
     t.string "title"
     t.text "body"
@@ -23,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_161156) do
   end
 
   create_table "cpd_events", force: :cascade do |t|
-    t.integer "cpdevent_id"
+    t.integer "cpd_event_id"
     t.string "name"
     t.datetime "date"
     t.text "description"
@@ -69,6 +68,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_161156) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "prc_number", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -79,8 +79,8 @@ ActiveRecord::Schema.define(version: 2018_10_27_161156) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "prc_number"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["prc_number"], name: "index_users_on_prc_number", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
