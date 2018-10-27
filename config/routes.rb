@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'splash/index'
+  get "events", to: "feed#events", as: "event_feed"
+  get "modules", to: "feed#modules", as: "module_feed"
   resources :announcements
   resources :cpd_events
   resources :enrollments
