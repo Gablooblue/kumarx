@@ -13,37 +13,37 @@
 
     <%= form.hidden_field :user_id, value: current_user.id %>
 
-    <div class="field">
+    <div class="form-group">
 	<%= form.label :first_name %>
-	<%= form.text_field :first_name %>
+	<%= form.text_field :first_name , class: "form-control"%>
     </div>
 
-    <div class="field">
+    <div class="form-group">
 	<%= form.label :last_name %>
-	<%= form.text_field :last_name %>
+	<%= form.text_field :last_name , class: "form-control"%>
     </div>
 
-    <div class="field">
+    <div class="form-group">
 	<%= form.label :mobile_number %>
-	<%= form.number_field :mobile_number %>
+	<%= form.number_field :mobile_number , class: "form-control"%>
     </div>
 
-    <div class="field">
+    <div class="form-group">
 	<%= form.label :region %>
-	<%= form.text_field :region %>
+	<%= form.text_field :region , class: "form-control"%>
     </div>
 
-    <div class="field">
+    <div class="form-group">
 	<%= form.label :province %>
-	<%= form.text_field :province %>
+	<%= form.text_field :province , class: "form-control"%>
     </div>
 
-    <div class="field">
+    <div class="form-group">
 	<%= form.label :city %>
-	<%= form.text_field :city %>
+	<%= form.text_field :city , class: "form-control"%>
     </div>
 
     <div class="actions">
-	<%= form.submit %>
+	<%= form.submit "Submit", class: "form-control"%>
     </div>
 <% end %>
