@@ -1,6 +1,9 @@
 class CpdEventsController < ApplicationController
   before_action :set_cpd_event, only: [:show, :edit, :update, :destroy]
 
+  def user_events
+    @events = current_user.cpd_events
+  end
   # GET /cpd_events
   # GET /cpd_events.json
   def index

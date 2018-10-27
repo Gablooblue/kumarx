@@ -1,6 +1,9 @@
 class UnitModulesController < ApplicationController
   before_action :set_unit_module, only: [:show, :edit, :update, :destroy]
 
+  def user_modules
+      @modules = current_user.unit_modules
+  end
   # GET /unit_modules
   # GET /unit_modules.json
   def index

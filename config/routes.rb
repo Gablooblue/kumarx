@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "feed/events", to: "feed#events", as: "event_feed"
   get "feed/modules", to: "feed#modules", as: "module_feed"
 
+  get "user_events", to: "cpd_events#user_events", as: "user_events"
+  get "user_modules", to: "unit_modules#user_modules", as: "user_modules"
   resources :cpd_events do
       resources :announcements
   end

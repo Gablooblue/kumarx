@@ -1,18 +1,21 @@
-<h1>Events feed</h1>
-<%= link_to "Modules feed", module_feed_path %>
 
+<div class="nav nav-tabs">
+    <li class = "nav-item">
+	<%= link_to "Events", event_feed_path, class: "nav-link active" %>
+    </li>
+    <li class = "nav-item">
+	<%= link_to "Modules", module_feed_path, class: "nav-link" %>
+    </li>
+</div>
 <% @events.each do |event| %>
-  <h1>
-    <strong>
-      <%= event.name %>
-    </strong>
-  </h1>
+    <p>
+	<strong>
+	    <%= event.name %>
+	</strong>
+    </p>
 
-  <p>
-    <%= event.date %>
-  </p>
+    <p>
+	<%= event.date %>
+    </p>
 
-  <p>
-    <%= event.description %>
-  </p>
 <% end %>
