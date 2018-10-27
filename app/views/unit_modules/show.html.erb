@@ -10,6 +10,15 @@
   <%= @unit_module.description %>
 </p>
 
-
+<% if not current_user.is_student(@unit_module.id) %>
+<%= form_for Enrollment.new, remote: true, url: unit_module_enrollments_path(@unit_module) do |f| %>
+    <%= f.hidden_field :unit_module_id, value: @unit_module.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :status_id, value: 1 %>
+    <%= f.submit "Enroll", class: "btn btn-primary" %>
+<% end %>
+<% else %>
+    <button class ="btn btn-secondary" disabled>Enrolled</button>
+<% end %>
 <%= link_to 'Edit', edit_unit_module_path(@unit_module) %> |
 <%= link_to 'Back', unit_modules_path %>

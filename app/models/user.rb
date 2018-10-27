@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
     has_one :profile 
     has_many :enrollments
-    has_many :unit_modules, through: :enrollment
+    has_many :unit_modules, through: :enrollments
 
     def email_required?
 	false
@@ -16,6 +16,10 @@ class User < ApplicationRecord
 
     def email_changed?
 	false
+    end
+
+    def is_student m
+	self.unit_modules.exists?(m)
     end
 
 end
