@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :announcements
+  resources :cpd_events
   resources :unit_modules
   devise_for :users
   resources :profiles

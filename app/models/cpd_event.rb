@@ -1,0 +1,2 @@
+class CpdEvent < ApplicationRecord
+end

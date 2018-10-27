@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_142235) do
+ActiveRecord::Schema.define(version: 2018_10_27_161156) do
+
+  create_table "announcements", force: :cascade do |t|
+    t.integer "cpdevent_id"
+    t.integer "announcement_id"
+    t.integer "user_id"
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cpd_events", force: :cascade do |t|
+    t.integer "cpdevent_id"
+    t.string "name"
+    t.datetime "date"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +40,13 @@ ActiveRecord::Schema.define(version: 2018_10_27_142235) do
     t.string "region"
     t.string "province"
     t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "unit_modules", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
