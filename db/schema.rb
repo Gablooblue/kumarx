@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_161156) do
+ActiveRecord::Schema.define(version: 2018_10_27_233530) do
 
   create_table "announcements", force: :cascade do |t|
     t.integer "cpd_event_id"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 2018_10_27_161156) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cpd_events_users", id: false, force: :cascade do |t|
+    t.integer "cpd_event_id", null: false
+    t.integer "user_id", null: false
+    t.index ["cpd_event_id", "user_id"], name: "index_cpd_events_users_on_cpd_event_id_and_user_id"
+    t.index ["user_id", "cpd_event_id"], name: "index_cpd_events_users_on_user_id_and_cpd_event_id"
   end
 
   create_table "enrollments", force: :cascade do |t|

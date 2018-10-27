@@ -10,6 +10,8 @@ class User < ApplicationRecord
     has_many :enrollments
     has_many :unit_modules, through: :enrollments
 
+    has_and_belongs_to_many :cpd_events
+
     def email_required?
 	false
     end
