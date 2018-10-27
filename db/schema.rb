@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_142235) do
+ActiveRecord::Schema.define(version: 2018_10_27_153049) do
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer "unit_module_id"
+    t.string "user_id"
+    t.integer "status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +29,20 @@ ActiveRecord::Schema.define(version: 2018_10_27_142235) do
     t.string "region"
     t.string "province"
     t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.integer "enrollment_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "unit_modules", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
