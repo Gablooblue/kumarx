@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_153049) do
+ActiveRecord::Schema.define(version: 2018_10_27_161156) do
+
+  create_table "announcements", force: :cascade do |t|
+    t.integer "cpdevent_id"
+    t.integer "announcement_id"
+    t.integer "user_id"
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cpd_events", force: :cascade do |t|
+    t.integer "cpdevent_id"
+    t.string "name"
+    t.datetime "date"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "enrollments", force: :cascade do |t|
     t.integer "unit_module_id"
@@ -60,6 +79,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_153049) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "prc_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
