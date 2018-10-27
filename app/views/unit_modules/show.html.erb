@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @unit_module.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @unit_module.description %>
+</p>
+
+<%= link_to 'Edit', edit_unit_module_path(@unit_module) %> |
+<%= link_to 'Back', unit_modules_path %>
