@@ -15,6 +15,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/new
   def new
     @announcement = Announcement.new
+    @cpd_event = CpdEvent.find(params[:cpd_event_id])
   end
 
   # GET /announcements/1/edit
