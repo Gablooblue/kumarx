@@ -69,6 +69,6 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params.require(:announcement).permit(:cpdevent_id, :announcement_id, :user_id, :title, :body)
+      params.require(:announcement).permit(:cpd_event_id, :user_id, :title, :body)
     end
 end

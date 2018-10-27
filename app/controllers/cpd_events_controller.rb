@@ -69,6 +69,6 @@ class CpdEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cpd_event_params
-      params.require(:cpd_event).permit(:cpdevent_id, :name, :date, :description)
+      params.require(:cpd_event).permit(:cpd_event_id, :name, :date, :description)
     end
 end
