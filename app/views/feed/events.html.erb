@@ -2,5 +2,17 @@
 <%= link_to "Modules feed", module_feed_path %>
 
 <% @events.each do |event| %>
-<% end %>
+  <h1>
+    <strong>
+      <%= @event.name %>
+    </strong>
+  </h1>
 
+  <p>
+    <%= @event.date %>
+  </p>
+
+  <p>
+    <%= @event.description %>
+  </p>
+<% end %>

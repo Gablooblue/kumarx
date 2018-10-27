@@ -7,6 +7,7 @@ class CpdEventsController < ApplicationController
     @cpd_events = CpdEvent.all
   end
 
+
   # GET /cpd_events/1
   # GET /cpd_events/1.json
   def show
