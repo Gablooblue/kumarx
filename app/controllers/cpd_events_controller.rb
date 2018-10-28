@@ -2,7 +2,7 @@ class CpdEventsController < ApplicationController
   before_action :set_cpd_event, only: [:show, :edit, :update, :destroy]
 
   def user_events
-    @events = current_user.cpd_events
+    @cpd_events = current_user.cpd_events
   end
   # GET /cpd_events
   # GET /cpd_events.json
@@ -14,6 +14,7 @@ class CpdEventsController < ApplicationController
   # GET /cpd_events/1
   # GET /cpd_events/1.json
   def show
+      @announcements = @cpd_event.announcements
   end
 
   # GET /cpd_events/new
@@ -73,6 +74,6 @@ class CpdEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cpd_event_params
-      params.require(:cpd_event).permit(:cpd_event_id, :name, :date, :description)
+      params.require(:cpd_event).permit(:cpd_event_id, :name, :date, :description, :image)
     end
 end

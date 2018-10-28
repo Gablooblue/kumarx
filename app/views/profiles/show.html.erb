@@ -1,27 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user_id %>
-</p>
-
-<p>
-  <strong>First name:</strong>
+<h1>
   <%= @profile.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
   <%= @profile.last_name %>
-</p>
+</h1>
+
 
 <p>
-  <strong>Total units:</strong>
-  <%= @profile.total_units %>
-</p>
-
-<p>
-  <strong>Mobile number:</strong>
+    <%= fa_icon "phone" %>
   <%= @profile.mobile_number %>
 </p>
 
@@ -40,5 +26,3 @@
   <%= @profile.city %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>

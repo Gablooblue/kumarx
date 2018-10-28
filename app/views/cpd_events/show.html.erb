@@ -1,20 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cpd_event.name %>
-</p>
+<div class = "row">
+    <div class = "col-md-4 mr-4">
+	<%= image_tag @cpd_event.get_image, alt: "Card image cap", class: "img-thumbnail mx-auto  d-block", style: "max-width: 50vw; max-height: 50vh;" %>
+  %>
+    </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @cpd_event.date %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @cpd_event.description %>
-</p>
+    <div class = "col-md-6">
 
-<%= link_to "Make announcement", new_cpd_event_announcement_path(@cpd_event) %>
-<%= link_to 'Edit', edit_cpd_event_path(@cpd_event) %> |
-<%= link_to 'Back', cpd_events_path %>
+    <h1><%= @cpd_event.name %></h1>
+    <p class = "text-secondary">
+	<%= fa_icon "calendar", class: "text-secondary"%> <%= friendly_date(@cpd_event.date) %><br>
+	<%= fa_icon "hourglass-start", class: "text-secondary"%> <%= friendly_time(@cpd_event.date) %>
+    </p>
+
+	<p>
+	    <%= @cpd_event.description %>
+	</p>
+    </div>
+</div>
+<hr>
+<h3 class = "text-center">Announcements</h3>
+<p class = "text-center"><%= link_to "Make announcement", new_cpd_event_announcement_path(@cpd_event), class: "text-center" %></p>
+<% if @announcements.blank? %>
+    <h5 class = "text-center">No Announcements</h5>
+<% end %>
+<% @announcements.each do |announcement| %>
+    <h5><%= announcement.title %></h5>
+    <p><%= announcement.body %></p>
+<% end %>

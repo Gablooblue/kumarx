@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'splash/index'
+  get "feed", to: "feed#index", as: "feed"
   get "feed/events", to: "feed#events", as: "event_feed"
   get "feed/modules", to: "feed#modules", as: "module_feed"
 

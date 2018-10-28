@@ -1,11 +1,3 @@
-<% @events.each do |event| %>
-    <p>
-	<strong>
-	    <%= event.name %>
-	</strong>
-    </p>
-
-    <p>
-	<%= event.date %>
-    </p>
-<% end %>
+<div class = "card-deck">
+    <%= render @cpd_events %>
+</div>

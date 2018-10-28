@@ -28,7 +28,7 @@ class EnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.save
-        format.html { redirect_back fallback_location: unit_modules_path, notice: 'Enrollment was successfully created.' }
+        format.html { redirect_back fallback_location: unit_modules_path, notice: 'You have sucessfully enrolled' }
         format.json { render :show, status: :created, location: @enrollment }
       else
         format.html { render :new }

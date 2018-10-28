@@ -1,0 +1,13 @@
+<h2 class = "text-center">Events</h3>
+<div class = "row">
+<% @events.each do |event|%>
+    <%= render "cpd_events/cpd_event", cpd_event: event %>
+<% end %>
+</div>
+<hr>
+<h2 class = "text-center">Modules</h2>
+<div class = "row">
+<% @modules.each do |m|%>
+    <%= render "unit_modules/unit_module", unit_module: m%>
+<% end %>
+</div>

@@ -1,31 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cpd Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cpd_events.each do |cpd_event| %>
-      <tr>
-        <td><%= cpd_event.name %></td>
-        <td><%= cpd_event.date %></td>
-        <td><%= cpd_event.description %></td>
-        <td><%= link_to 'Show', cpd_event %></td>
-        <td><%= link_to 'Edit', edit_cpd_event_path(cpd_event) %></td>
-        <td><%= link_to 'Destroy', cpd_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cpd Event', new_cpd_event_path %>
+<div class = "card-deck">
+<%= render @cpd_events %>
+</div>

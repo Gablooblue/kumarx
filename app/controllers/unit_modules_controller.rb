@@ -2,7 +2,7 @@ class UnitModulesController < ApplicationController
   before_action :set_unit_module, only: [:show, :edit, :update, :destroy]
 
   def user_modules
-      @modules = current_user.unit_modules
+      @unit_modules = current_user.unit_modules
   end
   # GET /unit_modules
   # GET /unit_modules.json
@@ -72,6 +72,6 @@ class UnitModulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_module_params
-      params.require(:unit_module).permit(:title, :description)
+      params.require(:unit_module).permit(:title, :description, :module_type, :image, {files: []})
     end
 end

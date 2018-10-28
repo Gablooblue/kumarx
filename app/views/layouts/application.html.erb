@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KumaRx</title>
+    <title>Kumar</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +10,10 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to "KumaRx", root_path, class: "navbar-brand" %>
+      <nav class="navbar navbar-expand-lg bg-white border-bottom">
+  <%= link_to root_path, class: "navbar-left" do %>
+      <%= image_tag "kumarx.png", id: "nav-logo" %>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,7 +28,7 @@
       </li>
     </ul>
     <ul class = "navbar-nav">
-	<% if not user_signed_in? %>
+	<% if not user_signed_in? or not current_user.profile.present? %>
 	<li class = "nav-item">
 	    <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
 	</li>
@@ -47,10 +49,6 @@
         </div>
       </li>
 
-	<li class = "nav-item">
-	</li>
-	<li class = "nav-item">
-	</li>
 	<% end %>
     </ul>
   </div>

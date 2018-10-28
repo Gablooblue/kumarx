@@ -1,29 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Unit Modules</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @unit_modules.each do |unit_module| %>
-      <tr>
-        <td><%= unit_module.title %></td>
-        <td><%= unit_module.description %></td>
-        <td><%= link_to 'Show', unit_module %></td>
-        <td><%= link_to 'Edit', edit_unit_module_path(unit_module) %></td>
-        <td><%= link_to 'Destroy', unit_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Unit Module', new_unit_module_path %>
+<div class = "card-deck">
+<%= render @unit_modules %>
+</div>

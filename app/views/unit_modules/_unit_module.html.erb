@@ -1,0 +1,9 @@
+<div class = "col-md-4 d-flex align-items-stretch">
+<div class = "card my-3">
+    <%= image_tag unit_module.get_image, alt: "Card image cap", class: " card-img-top img-fluid mw-100 mh-100" %>
+    <div class="card-body">
+	<h3 class="card-title"><%= link_to unit_module.title, unit_module%></h3>
+	<p class = "card-text text-truncate"><%= unit_module.description %></p>
+    </div>
+</div>
+</div>

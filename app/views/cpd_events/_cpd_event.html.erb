@@ -1,0 +1,13 @@
+<div class = "col-md-4 d-flex align-items-stretch">
+<div class = "card my-3">
+    <%= image_tag cpd_event.get_image, alt: "Card image cap", class: "  card-img-top img-fluid mw-100 mh-100" %>
+    <div class="card-body">
+	<h3 class="card-title"><%= link_to cpd_event.name, cpd_event%></h3>
+	<p class = "card-text text-secondary">
+	    <%= fa_icon "calendar", class: "text-secondary"%> <%= friendly_date(cpd_event.date) %><br>
+	    <%= fa_icon "hourglass-start", class: "text-secondary"%> <%= friendly_time(cpd_event.date) %>
+	</p>
+
+    </div>
+</div>
+</div>

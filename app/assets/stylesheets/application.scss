@@ -1,1 +1,18 @@
+
+@import "import/colors";
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+//@import "owl.carousel";
+//@import "owl.theme";
+
+$font-family-sans-serif: "Raleway", sans-serif;
+
+h1,h2,h3,h4,h5,h6 {
+    $font-family: 'Raleway', sans-serif !default;
+}
+#nav-logo
+{
+    width: 100px;
+    height: 75px;
+}
 @import "bootstrap";
